@@ -5,9 +5,11 @@
 
 def main():
     calibration_lines = read_file()
+    if len(calibration_lines) > 0:
+        calculate_values(calibration_lines)
 
 def read_file():
-    filename = input("Enter the calibration file name.")
+    filename = input("Enter the calibration file name. ")
     try:
         with open(filename, 'r') as file:
             lines = []
@@ -32,3 +34,6 @@ def calculate_values(lines):
             value_string = number_first + number_last
             values.append(int(value_string))
         print(sum(values))
+
+if __name__ == "__main__":
+    main()
