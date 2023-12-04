@@ -1,0 +1,31 @@
+main()
+    calibration_lines = read_file()
+    IF calibration_lines is not empty:
+        calculate_values(calibration_lines)
+END
+
+read_file()
+    PROMPT filename
+    TRY
+        WITH f open filename
+            READ filename
+                lines <- filename
+    CATCH
+        PUT could not read file error message
+        RETURN []
+END
+
+calculate_values(lines)
+    values <- []
+    FOR line in lines
+        number_first <- "_"
+        number_last <- "_"
+        FOR character in line
+            IF character is numeric
+                IF number_first is "_":
+                    number_first <- character
+                number_last <- character
+        value_string <- number_first + number_last.
+        values.append(int(value_string))
+    PUT sum of values
+END
