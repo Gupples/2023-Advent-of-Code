@@ -8,6 +8,7 @@ read_file()
     PROMPT filename
     TRY
         WITH f open filename
+            lines <- []
             READ filename
                 lines <- filename
     CATCH
