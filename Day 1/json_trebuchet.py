@@ -24,7 +24,7 @@ def read_file():
     
 def calculate_values(lines):
     values = []
-    for ine in lines:
+    for line in lines:
         number_first = '_'
         number_last = "_"
         for character in line:
